@@ -1,0 +1,115 @@
+html, body { height: 100% }
+body, textarea { font-family: sans-serif; }
+textarea { resize: none; }
+
+#recv:after { 
+  content: "";
+  background: url("https://ryersonlibrary.nyc3.digitaloceanspaces.com/assets/img/gd_two_column.png") no-repeat;
+  background-position: left 75px bottom 25px; 
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.5;
+} 
+
+#buttons a { 
+  margin-right: 0.5rem; 
+  display: inline-block!important; 
+}
+
+#buttons a span.sprite { 
+  display: inline-block!important;
+  background-image:url("https://ryersonlibrary.nyc3.digitaloceanspaces.com/assets/img/spritesheet_libraryh3lp_chatbox.png");
+  background-repeat:no-repeat;
+  float: none;
+  margin: 0;
+}
+#buttons a:focus span.sprite { outline: 2px solid yellow; }
+
+a#sounds span.sprite { 
+  background-position: -51px 0!important; 
+  width: 19px!important; height: 14px;
+}
+a#mail span.sprite { 
+  background-position: 0 0; 
+  width:19px!important; height:13px; 
+}
+a#file span.sprite { 
+  background-position: -35px 0; 
+  width:15px!important; height:14px;
+}
+a#popout span.sprite {
+  background-position: -19px 0; 
+  width:15px!important; height:14px; 
+}
+
+body > div { 
+  box-sizing: border-box;
+  padding: 0 4px; 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+}
+#header, #layout, #buttons, #send, #status {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#header { 
+  order: 1; 
+  padding: 0.4rem 0.6rem;
+  margin-top: 4px;
+}
+#header h1 { 
+  margin: 0; 
+  line-height: 100%;
+  vertical-align: initial;
+}
+
+#presence { display: none; }
+
+#layout { 
+  order: 2; 
+  flex: 1 0 auto;
+  border: none; 
+}
+
+#send { 
+  order: 3; 
+  margin-top: 4px; 
+}
+
+#buttons { 
+  display: flex; 
+  order: 4; 
+  padding: 0.25rem;
+  margin-top: 2px;
+}
+
+#status { 
+  order: 5; 
+  display: none;
+} 
+
+#buttons:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#buttons #sounds { order: 1; }
+#buttons > span { float: none!important; order: 2; display: flex; }
+#file { order: 1; }
+#popout { order: 2; }
+#mail { order: 3; }
+
+#layout #recv { box-sizing: border-box; padding: 0.4rem }
+#recv > div + div { margin-top: 0.3rem; }
+#send textarea { box-sizing: border-box; padding: 0.4rem}
